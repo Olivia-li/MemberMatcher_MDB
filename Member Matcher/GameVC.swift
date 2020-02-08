@@ -88,10 +88,10 @@ class GameVC: UIViewController {
             curr+=1
             TimeOut.text = "5 seconds left"
             seconds = 0
-            Name1.backgroundColor = UIColor.clear
-            Name2.backgroundColor = UIColor.clear
-            Name3.backgroundColor = UIColor.clear
-            Name4.backgroundColor = UIColor.clear
+            Name1.setTitleColor(UIColor.black, for: .normal)
+            Name2.setTitleColor(UIColor.black, for: .normal)
+            Name3.setTitleColor(UIColor.black, for: .normal)
+            Name4.setTitleColor(UIColor.black, for: .normal)
             displayNames()
             displayPicture()
             getScore()
@@ -169,7 +169,7 @@ class GameVC: UIViewController {
     }
     
     func correctAnswer(_ btn: UIButton){
-        btn.backgroundColor = UIColor.green
+        btn.setTitleColor(UIColor.green, for: .normal)
         streak += 1
         if streak > longestStreak{
             longestStreak = streak
@@ -183,7 +183,7 @@ class GameVC: UIViewController {
     }
     
     func wrongAnswer(_ btn: UIButton){
-        btn.backgroundColor = UIColor.red
+        btn.setTitleColor(UIColor.red, for: .normal)
         streak = 0
         thirdName = secondName
         secondName = firstName
@@ -207,7 +207,7 @@ class GameVC: UIViewController {
             if let vc = segue.destination as? StatsVC, segue.identifier == "statsboard" {
                 timer?.invalidate()
                 play.setTitle("Play", for: .normal)
-                on = false                
+                on = false
                 vc.longestStreak = longestStreak
                 vc.firstName = firstName
                 vc.secondName = secondName
