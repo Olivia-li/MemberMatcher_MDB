@@ -1,31 +1,27 @@
 //
-//  ViewController.swift
+//  GameOverVC.swift
 //  Member Matcher
 //
-//  Created by Olivia Li on 2020-02-05.
+//  Created by Olivia Li on 2020-02-07.
 //  Copyright © 2020 Olivia Li. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var logo: UIImageView!
-    
-    @IBOutlet weak var btn: UIButton!
+class GameOverVC: UIViewController {
+
+    @IBOutlet weak var final: UILabel!
+    var score:Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        logo.image = UIImage(named:"mdb_logo.png")
-        btn.layer.cornerRadius = 30
-        btn.layer.borderWidth = 1
+        final.text = "Your score is " + String(score) + "/20"
+
         // Do any additional setup after loading the view.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         segue.destination.modalPresentationStyle = .fullScreen
     }
-    
-
-
 
 }
-
