@@ -17,6 +17,7 @@ class GameVC: UIViewController {
     @IBOutlet weak var Score: UILabel!
     @IBOutlet weak var TimeOut: UILabel!
     @IBOutlet weak var play: UIButton!
+    @IBOutlet weak var rounds: UILabel!
     
     // Picture View
     @IBOutlet weak var Picture: UIImageView!
@@ -45,6 +46,11 @@ class GameVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rounds.text = "Round " + String(curr+1) + " out of 20"
+        prettify(Name1)
+        prettify(Name2)
+        prettify(Name3)
+        prettify(Name4)
         on = true
         play.setTitle("Pause", for: .normal)
         TimeOut.text = "5 seconds left"
@@ -52,6 +58,12 @@ class GameVC: UIViewController {
         displayNames()
         getScore()
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+    }
+    
+    func prettify(_ btn: UIButton){
+        btn.backgroundColor = UIColor(red: 102/255, green: 190/255, blue: 237/255, alpha: 1.0)
+        btn.layer.cornerRadius = 25
+        btn.setTitleColor(UIColor.white, for: .normal)
     }
     
     @IBAction func playPause(_ sender: Any) {
@@ -82,16 +94,17 @@ class GameVC: UIViewController {
     }
     
     func reset(){
-        if curr < 20{
+        if curr < 19{
             seconds = 0
             timer?.invalidate()
             curr+=1
+            rounds.text = "Round " + String(curr+1) + " out of 20"
             TimeOut.text = "5 seconds left"
             seconds = 0
-            Name1.setTitleColor(UIColor.black, for: .normal)
-            Name2.setTitleColor(UIColor.black, for: .normal)
-            Name3.setTitleColor(UIColor.black, for: .normal)
-            Name4.setTitleColor(UIColor.black, for: .normal)
+            prettify(Name1)
+            prettify(Name2)
+            prettify(Name3)
+            prettify(Name4)
             displayNames()
             displayPicture()
             getScore()
@@ -169,7 +182,7 @@ class GameVC: UIViewController {
     }
     
     func correctAnswer(_ btn: UIButton){
-        btn.setTitleColor(UIColor.green, for: .normal)
+        btn.backgroundColor = UIColor(red: 85/255, green: 189/255, blue: 81/255, alpha: 1.0)
         streak += 1
         if streak > longestStreak{
             longestStreak = streak
@@ -183,7 +196,7 @@ class GameVC: UIViewController {
     }
     
     func wrongAnswer(_ btn: UIButton){
-        btn.setTitleColor(UIColor.red, for: .normal)
+        btn.backgroundColor = UIColor(red: 227/255, green: 70/255, blue: 70/255, alpha: 1.0)
         streak = 0
         thirdName = secondName
         secondName = firstName

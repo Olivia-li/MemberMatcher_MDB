@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btn: UIButton!
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
-        logo.image = UIImage(named:"mdb_logo.png")!
+        logo.image = UIImage(named:"mdb_logo-1.png")!
         btn.layer.cornerRadius = 25
         btn.layer.borderWidth = 3
         btn.layer.borderColor = UIColor(red: 102/255, green: 190/255, blue: 237/255, alpha: 1.0).cgColor
