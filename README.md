@@ -5,7 +5,8 @@ The goal of this app is to encourage newbies to learn the names of the members i
 It hasn't worked. I still don't know anybody's name. 
 
 <p float="left">
-  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/master/README%20images/start%20page.png" width="400"/>
-  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/master/README%20images/main%20page.png" width="400"/>
-  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/master/README%20images/statistics.png" width="400"/>
+  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/media/Home.png" width="400"/>
+  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/media/Game.png" width="400"/>
+  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/media/Stats.png" width="400"/>
+  <img src="https://github.com/Olivia-li/MemberMatcher_MDB/blob/media/Game%20Over.png" width="400"/>
 </p>
